@@ -3,7 +3,7 @@ const Main = imports.ui.main;
 const { Gio, UPowerGlib:UPower } = imports.gi;
 
 let settings;
-let touchpadWatcherOn, touchpadWatcherOff;
+let touchpadWatcher;
 
 const switchOSK = () => {
     let status = settings.get_string("send-events")
