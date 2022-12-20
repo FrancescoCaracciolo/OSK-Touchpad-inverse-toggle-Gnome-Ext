@@ -1,18 +1,17 @@
 const ExtensionUtils = imports.misc.extensionUtils;
 const Main = imports.ui.main;
-const { Gio, UPowerGlib:UPower } = imports.gi;
+const { Gio, UPowerGlib:UPowe } = imports.gi;
 
 let settings;
 let touchpadWatcher;
 
+
 const switchOSK = () => {
     let status = settings.get_string("send-events");
-    let value = status == "enabled" ? "false" : "true"; 
+    let value = status == "enabled" ? false : true; 
     try {
-        Gio.Subprocess.new(
-            ["gsettings", "set", "org.gnome.desktop.a11y.applications", "screen-keyboard-enabled", value],
-            Gio.SubprocessFlags.STDOUT_PIPE | Gio.SubprocessFlags.STDERR_PIPE
-        );
+        let keyboardsettings = new Gio.Settings({schema_id: "org.gnome.desktop.a11y.applications"});  
+        keyboardsettings.set_boolean("screen-keyboard-enabled", value)
     } catch (e) {
         logError(e);
     }
