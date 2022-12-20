@@ -6,10 +6,8 @@ let settings;
 let touchpadWatcher;
 
 const switchOSK = () => {
-    let status = settings.get_string("send-events")
-    log(status);
+    let status = settings.get_string("send-events");
     let value = status == "enabled" ? "false" : "true"; 
-    log(value);
     try {
         Gio.Subprocess.new(
             ["gsettings", "set", "org.gnome.desktop.a11y.applications", "screen-keyboard-enabled", value],
