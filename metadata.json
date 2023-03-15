@@ -3,7 +3,7 @@
   "description": "This extension enables On Screek Keyboard from accessibility settings when touchpad is turned off, and disables it when it's on. Useful for 2 in 1 when tablet mode is not properly recognized.",
   "uuid": "osktouchpad@francescocaracciolo.uno",
   "url": "https://github.com/FrancescoCaracciolo/OSK-Touchpad-inverse-toggle-Gnome-Ext",
-  "version": 1.0,
+  "version": 1.1,
   "shell-version": [
     "44"
     "43",
